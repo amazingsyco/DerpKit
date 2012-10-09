@@ -8,31 +8,11 @@
 
 #import "UIViewController+Derp.h"
 #import <objc/runtime.h>
+#import "NSObject+YMOptionsAndDefaults.h"
 
 const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 	.minHeight = @"DerpKeyboardViewHandlerOptionMinimumHeight",
 };
-
-#define kDerpKeyboardViewHandlerOptions @"derp_keyboardViewHandlerOptions"
-#define kDerpKeyboardViewHandlerDefaults @"derp_keyboardViewHandlerDefaults"
-
-@implementation UIViewController (Derp_OptionsAndDefaults)
-
--(void)derp_registerDefaults {
-	NSDictionary *defaults = @{
-		DerpKeyboardViewHandlerOptions.minHeight : @(0.0),
-	};
-	objc_setAssociatedObject(self, kDerpKeyboardViewHandlerDefaults, defaults, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
--(id)derp_optionsOrDefaultForKey:(NSString*)optionKey {
-	NSDictionary *options = objc_getAssociatedObject(self, kDerpKeyboardViewHandlerOptions);
-	NSDictionary *defaults = objc_getAssociatedObject(self, kDerpKeyboardViewHandlerDefaults);
-	NSAssert(defaults, @"Defaults must have been set when accessing options.");
-	return options[optionKey] ?: defaults[optionKey];
-}
-
-@end
 
 @implementation UIViewController (Derp)
 
@@ -51,9 +31,10 @@ const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 }
 
 -(void)derp_addKeyboardViewHandlersWithOptions:(NSDictionary*)options{
-	[self derp_registerDefaults];
 	if (options) {
-		objc_setAssociatedObject(self, kDerpKeyboardViewHandlerOptions, options, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+		[self ym_registerOptions:options defaults:@{
+			 DerpKeyboardViewHandlerOptions.minHeight : @(0.0),
+		 }];
 	}
 	NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 	id willShow = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
@@ -95,7 +76,7 @@ const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 }
 
 -(CGRect)derp_viewFrameForKeyboardAppearing:(BOOL)isAppearing toFrame:(CGRect)keyboardFrame{
-	CGFloat minimumHeight = [[self derp_optionsOrDefaultForKey:DerpKeyboardViewHandlerOptions.minHeight] floatValue];
+	CGFloat minimumHeight = [[self ym_optionOrDefaultForKey:DerpKeyboardViewHandlerOptions.minHeight] floatValue];
 	CGRect viewFrame = self.view.frame;
 	CGFloat keyboardHeight = (isAppearing ? -1.0 : +1.0) * keyboardFrame.size.height;
 	if (viewFrame.size.height - keyboardFrame.size.height < minimumHeight) {
