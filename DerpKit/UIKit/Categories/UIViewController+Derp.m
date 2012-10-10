@@ -31,11 +31,9 @@ const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 }
 
 -(void)derp_addKeyboardViewHandlersWithOptions:(NSDictionary*)options{
-	if (options) {
-		[self ym_registerOptions:options defaults:@{
-			 DerpKeyboardViewHandlerOptions.minHeight : @(0.0),
-		 }];
-	}
+	[self ym_registerOptions:options defaults:@{
+		 DerpKeyboardViewHandlerOptions.minHeight : @(0.0),
+	 }];
 	NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 	id willShow = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
 		[self derp_performIfVisible:^{
