@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="YMViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRv-OL-qgH">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-xD-ywe">
+                                        <color key="backgroundColor" red="1" green="0.88214472939999999" blue="0.76531427559999998" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="NsS-jo-jXb"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ArS-kN-8BH">
+                                        <color key="backgroundColor" red="0.73725491759999995" green="0.15686275059999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="tn7-Z3-hfF"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jj3-pV-B34">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="eGM-Ah-4cG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2" id="hRT-bW-ZeA"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.54901963470000004" blue="0.1019607931" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Jj3-pV-B34" firstAttribute="top" secondItem="gRv-OL-qgH" secondAttribute="top" constant="25" id="7ga-fI-qzM"/>
+                                    <constraint firstItem="K3V-xD-ywe" firstAttribute="trailing" secondItem="ArS-kN-8BH" secondAttribute="trailing" type="default" id="JO4-wd-qib"/>
+                                    <constraint firstItem="Jj3-pV-B34" firstAttribute="trailing" secondItem="ArS-kN-8BH" secondAttribute="trailing" type="default" id="cle-21-MGf"/>
+                                    <constraint firstItem="K3V-xD-ywe" firstAttribute="leading" secondItem="ArS-kN-8BH" secondAttribute="leading" type="default" id="cmK-gL-OJM"/>
+                                    <constraint firstAttribute="bottom" secondItem="K3V-xD-ywe" secondAttribute="bottom" constant="20" symbolic="YES" type="user" id="dlW-1s-l4Q"/>
+                                    <constraint firstItem="K3V-xD-ywe" firstAttribute="top" secondItem="ArS-kN-8BH" secondAttribute="bottom" constant="21" type="user" id="lCa-4w-uUM"/>
+                                    <constraint firstItem="Jj3-pV-B34" firstAttribute="leading" secondItem="ArS-kN-8BH" secondAttribute="leading" type="default" id="tNb-ik-pMI"/>
+                                    <constraint firstItem="ArS-kN-8BH" firstAttribute="centerX" secondItem="gRv-OL-qgH" secondAttribute="centerX" type="default" id="wt9-yn-L7g"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gRv-OL-qgH" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="5" type="user" id="3bQ-bL-Iwp"/>
+                            <constraint firstAttribute="bottom" secondItem="gRv-OL-qgH" secondAttribute="bottom" constant="5" type="user" id="4W7-NP-x5m"/>
+                            <constraint firstItem="gRv-OL-qgH" firstAttribute="top" secondItem="3" secondAttribute="top" constant="5" type="user" id="JGX-Ml-SNx"/>
+                            <constraint firstItem="gRv-OL-qgH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="qcZ-ua-6CD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

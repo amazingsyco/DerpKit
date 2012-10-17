@@ -16,13 +16,28 @@
 		1ED3F1C515B2AD3B0011D729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1C415B2AD3B0011D729 /* Foundation.framework */; };
 		1ED3F1CA15B2AD3B0011D729 /* DerpKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1ED3F1C915B2AD3B0011D729 /* DerpKit.h */; };
 		1ED3F1D415B2AD3C0011D729 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1D315B2AD3C0011D729 /* SenTestingKit.framework */; };
-		1ED3F1D615B2AD3C0011D729 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1D515B2AD3C0011D729 /* UIKit.framework */; };
 		1ED3F1D715B2AD3C0011D729 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1C415B2AD3B0011D729 /* Foundation.framework */; };
-		1ED3F1DA15B2AD3C0011D729 /* libDerpKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1C115B2AD3B0011D729 /* libDerpKit.a */; };
 		1ED3F1E015B2AD3C0011D729 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1ED3F1DE15B2AD3C0011D729 /* InfoPlist.strings */; };
 		1ED3F1E315B2AD3C0011D729 /* DerpKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3F1E215B2AD3C0011D729 /* DerpKitTests.m */; };
 		1ED3F1F215B2ADA90011D729 /* NSString+Derp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3F1F115B2ADA90011D729 /* NSString+Derp.m */; };
 		1ED3F1F515B2AE760011D729 /* NSData+Derp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED3F1F415B2AE760011D729 /* NSData+Derp.m */; };
+		2FC0D79A162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D799162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m */; };
+		2FC0D79B162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D799162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m */; };
+		2FC0D7A3162EE7D700387091 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC0D7A0162EE7BA00387091 /* UIKit.framework */; };
+		2FC0D7A4162EE7DE00387091 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC0D7A0162EE7BA00387091 /* UIKit.framework */; };
+		2FC0D7AC162EE8AB00387091 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC0D7A0162EE7BA00387091 /* UIKit.framework */; };
+		2FC0D7AD162EE8AB00387091 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED3F1C415B2AD3B0011D729 /* Foundation.framework */; };
+		2FC0D7AF162EE8AB00387091 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC0D7AE162EE8AB00387091 /* CoreGraphics.framework */; };
+		2FC0D7B5162EE8AB00387091 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0D7B3162EE8AB00387091 /* InfoPlist.strings */; };
+		2FC0D7B7162EE8AB00387091 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D7B6162EE8AB00387091 /* main.m */; };
+		2FC0D7BB162EE8AB00387091 /* YMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D7BA162EE8AB00387091 /* YMAppDelegate.m */; };
+		2FC0D7BD162EE8AB00387091 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0D7BC162EE8AB00387091 /* Default.png */; };
+		2FC0D7BF162EE8AB00387091 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0D7BE162EE8AB00387091 /* Default@2x.png */; };
+		2FC0D7C1162EE8AB00387091 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0D7C0162EE8AB00387091 /* Default-568h@2x.png */; };
+		2FC0D7C4162EE8AB00387091 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FC0D7C2162EE8AB00387091 /* MainStoryboard_iPhone.storyboard */; };
+		2FC0D7CA162EE8AB00387091 /* YMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D7C9162EE8AB00387091 /* YMViewController.m */; };
+		2FC0D7CE162EE93300387091 /* UIViewController+Derp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E11A54915B331F100500EBD /* UIViewController+Derp.m */; };
+		2FC0D7CF162EE94800387091 /* NSObject+YMOptionsAndDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC0D799162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +78,6 @@
 		1ED3F1C915B2AD3B0011D729 /* DerpKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DerpKit.h; sourceTree = "<group>"; };
 		1ED3F1D215B2AD3C0011D729 /* DerpKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DerpKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ED3F1D315B2AD3C0011D729 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		1ED3F1D515B2AD3C0011D729 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		1ED3F1DD15B2AD3C0011D729 /* DerpKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DerpKitTests-Info.plist"; sourceTree = "<group>"; };
 		1ED3F1DF15B2AD3C0011D729 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1ED3F1E115B2AD3C0011D729 /* DerpKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DerpKitTests.h; sourceTree = "<group>"; };
@@ -72,6 +86,23 @@
 		1ED3F1F115B2ADA90011D729 /* NSString+Derp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Derp.m"; sourceTree = "<group>"; };
 		1ED3F1F315B2AE760011D729 /* NSData+Derp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Derp.h"; sourceTree = "<group>"; };
 		1ED3F1F415B2AE760011D729 /* NSData+Derp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Derp.m"; sourceTree = "<group>"; };
+		2FC0D798162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YMOptionsAndDefaults.h"; sourceTree = "<group>"; };
+		2FC0D799162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YMOptionsAndDefaults.m"; sourceTree = "<group>"; };
+		2FC0D7A0162EE7BA00387091 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2FC0D7AA162EE8AB00387091 /* DerpDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DerpDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FC0D7AE162EE8AB00387091 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2FC0D7B2162EE8AB00387091 /* DerpDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DerpDemo-Info.plist"; sourceTree = "<group>"; };
+		2FC0D7B4162EE8AB00387091 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FC0D7B6162EE8AB00387091 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FC0D7B8162EE8AB00387091 /* DerpDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DerpDemo-Prefix.pch"; sourceTree = "<group>"; };
+		2FC0D7B9162EE8AB00387091 /* YMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAppDelegate.h; sourceTree = "<group>"; };
+		2FC0D7BA162EE8AB00387091 /* YMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMAppDelegate.m; sourceTree = "<group>"; };
+		2FC0D7BC162EE8AB00387091 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		2FC0D7BE162EE8AB00387091 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		2FC0D7C0162EE8AB00387091 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2FC0D7C3162EE8AB00387091 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		2FC0D7C8162EE8AB00387091 /* YMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMViewController.h; sourceTree = "<group>"; };
+		2FC0D7C9162EE8AB00387091 /* YMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC0D7A4162EE7DE00387091 /* UIKit.framework in Frameworks */,
 				1ED3F1C515B2AD3B0011D729 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,10 +119,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC0D7A3162EE7D700387091 /* UIKit.framework in Frameworks */,
 				1ED3F1D415B2AD3C0011D729 /* SenTestingKit.framework in Frameworks */,
-				1ED3F1D615B2AD3C0011D729 /* UIKit.framework in Frameworks */,
 				1ED3F1D715B2AD3C0011D729 /* Foundation.framework in Frameworks */,
-				1ED3F1DA15B2AD3C0011D729 /* libDerpKit.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FC0D7A7162EE8AB00387091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FC0D7AC162EE8AB00387091 /* UIKit.framework in Frameworks */,
+				2FC0D7AD162EE8AB00387091 /* Foundation.framework in Frameworks */,
+				2FC0D7AF162EE8AB00387091 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +168,7 @@
 			children = (
 				1ED3F1C615B2AD3B0011D729 /* DerpKit */,
 				1ED3F1DB15B2AD3C0011D729 /* DerpKitTests */,
+				2FC0D7B0162EE8AB00387091 /* DerpDemo */,
 				1ED3F1C315B2AD3B0011D729 /* Frameworks */,
 				1ED3F1C215B2AD3B0011D729 /* Products */,
 			);
@@ -137,6 +179,7 @@
 			children = (
 				1ED3F1C115B2AD3B0011D729 /* libDerpKit.a */,
 				1ED3F1D215B2AD3C0011D729 /* DerpKitTests.octest */,
+				2FC0D7AA162EE8AB00387091 /* DerpDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,7 +189,8 @@
 			children = (
 				1ED3F1C415B2AD3B0011D729 /* Foundation.framework */,
 				1ED3F1D315B2AD3C0011D729 /* SenTestingKit.framework */,
-				1ED3F1D515B2AD3C0011D729 /* UIKit.framework */,
+				2FC0D7A0162EE7BA00387091 /* UIKit.framework */,
+				2FC0D7AE162EE8AB00387091 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -198,8 +242,37 @@
 				1ED3F1F415B2AE760011D729 /* NSData+Derp.m */,
 				1EABBD6116223801001B9331 /* NSObject+Derp.h */,
 				1EABBD6216223801001B9331 /* NSObject+Derp.m */,
+				2FC0D798162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.h */,
+				2FC0D799162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		2FC0D7B0162EE8AB00387091 /* DerpDemo */ = {
+			isa = PBXGroup;
+			children = (
+				2FC0D7B9162EE8AB00387091 /* YMAppDelegate.h */,
+				2FC0D7BA162EE8AB00387091 /* YMAppDelegate.m */,
+				2FC0D7C2162EE8AB00387091 /* MainStoryboard_iPhone.storyboard */,
+				2FC0D7C8162EE8AB00387091 /* YMViewController.h */,
+				2FC0D7C9162EE8AB00387091 /* YMViewController.m */,
+				2FC0D7B1162EE8AB00387091 /* Supporting Files */,
+			);
+			path = DerpDemo;
+			sourceTree = "<group>";
+		};
+		2FC0D7B1162EE8AB00387091 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FC0D7B2162EE8AB00387091 /* DerpDemo-Info.plist */,
+				2FC0D7B3162EE8AB00387091 /* InfoPlist.strings */,
+				2FC0D7B6162EE8AB00387091 /* main.m */,
+				2FC0D7B8162EE8AB00387091 /* DerpDemo-Prefix.pch */,
+				2FC0D7BC162EE8AB00387091 /* Default.png */,
+				2FC0D7BE162EE8AB00387091 /* Default@2x.png */,
+				2FC0D7C0162EE8AB00387091 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +314,23 @@
 			productReference = 1ED3F1D215B2AD3C0011D729 /* DerpKitTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		2FC0D7A9162EE8AB00387091 /* DerpDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FC0D7CB162EE8AB00387091 /* Build configuration list for PBXNativeTarget "DerpDemo" */;
+			buildPhases = (
+				2FC0D7A6162EE8AB00387091 /* Sources */,
+				2FC0D7A7162EE8AB00387091 /* Frameworks */,
+				2FC0D7A8162EE8AB00387091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DerpDemo;
+			productName = DerpDemo;
+			productReference = 2FC0D7AA162EE8AB00387091 /* DerpDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -264,6 +354,7 @@
 			targets = (
 				1ED3F1C015B2AD3B0011D729 /* DerpKit */,
 				1ED3F1D115B2AD3C0011D729 /* DerpKitTests */,
+				2FC0D7A9162EE8AB00387091 /* DerpDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -274,6 +365,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ED3F1E015B2AD3C0011D729 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FC0D7A8162EE8AB00387091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FC0D7B5162EE8AB00387091 /* InfoPlist.strings in Resources */,
+				2FC0D7BD162EE8AB00387091 /* Default.png in Resources */,
+				2FC0D7BF162EE8AB00387091 /* Default@2x.png in Resources */,
+				2FC0D7C1162EE8AB00387091 /* Default-568h@2x.png in Resources */,
+				2FC0D7C4162EE8AB00387091 /* MainStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +407,7 @@
 				1ED3F1F515B2AE760011D729 /* NSData+Derp.m in Sources */,
 				1E11A54A15B331F100500EBD /* UIViewController+Derp.m in Sources */,
 				1EABBD6316223801001B9331 /* NSObject+Derp.m in Sources */,
+				2FC0D79A162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +416,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ED3F1E315B2AD3C0011D729 /* DerpKitTests.m in Sources */,
+				2FC0D79B162EE6CD00387091 /* NSObject+YMOptionsAndDefaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FC0D7A6162EE8AB00387091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FC0D7B7162EE8AB00387091 /* main.m in Sources */,
+				2FC0D7BB162EE8AB00387091 /* YMAppDelegate.m in Sources */,
+				2FC0D7CA162EE8AB00387091 /* YMViewController.m in Sources */,
+				2FC0D7CE162EE93300387091 /* UIViewController+Derp.m in Sources */,
+				2FC0D7CF162EE94800387091 /* NSObject+YMOptionsAndDefaults.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +449,22 @@
 				1ED3F1DF15B2AD3C0011D729 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2FC0D7B3162EE8AB00387091 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FC0D7B4162EE8AB00387091 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2FC0D7C2162EE8AB00387091 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FC0D7C3162EE8AB00387091 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -441,6 +574,37 @@
 			};
 			name = Release;
 		};
+		2FC0D7CC162EE8AB00387091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DerpDemo/DerpDemo-Prefix.pch";
+				INFOPLIST_FILE = "DerpDemo/DerpDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2FC0D7CD162EE8AB00387091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DerpDemo/DerpDemo-Prefix.pch";
+				INFOPLIST_FILE = "DerpDemo/DerpDemo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -467,6 +631,15 @@
 			buildConfigurations = (
 				1ED3F1EA15B2AD3C0011D729 /* Debug */,
 				1ED3F1EB15B2AD3C0011D729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FC0D7CB162EE8AB00387091 /* Build configuration list for PBXNativeTarget "DerpDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FC0D7CC162EE8AB00387091 /* Debug */,
+				2FC0D7CD162EE8AB00387091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
