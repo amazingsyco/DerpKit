@@ -30,43 +30,35 @@ const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 	[self derp_addKeyboardViewHandlersWithOptions:nil];
 }
 
+-(void)derp_adaptViewFrameAfterKeyboardNotification:(NSNotification*)note{
+	[self derp_performIfVisible:^{
+		CGRect userInfoKeyboardBeginFrame = [(NSValue *)note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+		CGRect userInfoKeyboardEndFrame = [(NSValue *)note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+		CGRect keyboardFrame = [self.view convertRect:userInfoKeyboardEndFrame fromView:nil];
+		BOOL appearing = (userInfoKeyboardEndFrame.origin.y < userInfoKeyboardBeginFrame.origin.y);
+		CGRect viewFrame = [self derp_viewFrameForKeyboardAppearing:appearing toFrame:keyboardFrame];
+		
+		[UIView beginAnimations:@"UIKeyboard" context:nil];
+		[UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
+		[UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue]];
+		self.view.frame = viewFrame;
+//		NSLog(@"Derp %@ keyboard self.view.frame = %@",  appearing?@"show":@"hide", NSStringFromCGRect(viewFrame));
+		
+//		[UIView commitAnimations];
+	}];
+}
+
 -(void)derp_addKeyboardViewHandlersWithOptions:(NSDictionary*)options{
 	[self ym_registerOptions:options defaults:@{
-		 DerpKeyboardViewHandlerOptions.minHeight : @(0.0),
+		 DerpKeyboardViewHandlerOptions.minHeight : @0.0,
 	 }];
 	NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 	id willShow = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
-		[self derp_performIfVisible:^{
-			CGRect keyboardFrame = [self.view convertRect:[(NSValue *)note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue]
-												 fromView:nil];
-			CGRect viewFrame = [self derp_viewFrameForKeyboardAppearing:YES toFrame:keyboardFrame];
-			
-			[UIView beginAnimations:@"UIKeyboard" context:nil];
-			
-			[UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-			[UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue]];
-			
-			self.view.frame = viewFrame;
-			
-			[UIView commitAnimations];
-		}];
+		[self derp_adaptViewFrameAfterKeyboardNotification:note];
 	}];
 	
 	id willHide = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
-		[self derp_performIfVisible:^{
-			CGRect keyboardFrame = [self.view convertRect:[(NSValue *)note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue]
-												 fromView:nil];
-			CGRect viewFrame = [self derp_viewFrameForKeyboardAppearing:NO toFrame:keyboardFrame];
-			
-			[UIView beginAnimations:@"UIKeyboard" context:nil];
-			
-			[UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
-			[UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] intValue]];
-			
-			self.view.frame = viewFrame;
-			
-			[UIView commitAnimations];
-		}];
+		[self derp_adaptViewFrameAfterKeyboardNotification:note];
 	}];
 	
 	objc_setAssociatedObject(self, "derp_willShowKeyboardNotification", willShow, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
