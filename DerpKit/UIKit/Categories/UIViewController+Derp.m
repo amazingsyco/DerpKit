@@ -27,38 +27,44 @@ const struct DerpKeyboardViewHandlerOptions DerpKeyboardViewHandlerOptions = {
 }
 
 -(void)derp_addKeyboardViewHandlers{
-	[self derp_addKeyboardViewHandlersWithOptions:nil];
+	[self derp_addKeyboardViewHandlersWithConstraint:nil options:nil];
 }
 
--(void)derp_adaptViewFrameAfterKeyboardNotification:(NSNotification*)note{
+-(void)derp_adaptViewFrameAfterKeyboardNotification:(NSNotification*)note appearing:(BOOL)appearing constraint:(NSLayoutConstraint*)constraint{
 	[self derp_performIfVisible:^{
-		CGRect userInfoKeyboardBeginFrame = [(NSValue *)note.userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
 		CGRect userInfoKeyboardEndFrame = [(NSValue *)note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
 		CGRect keyboardFrame = [self.view convertRect:userInfoKeyboardEndFrame fromView:nil];
-		BOOL appearing = (userInfoKeyboardEndFrame.origin.y < userInfoKeyboardBeginFrame.origin.y);
-		CGRect viewFrame = [self derp_viewFrameForKeyboardAppearing:appearing toFrame:keyboardFrame];
 		
 		[UIView beginAnimations:@"UIKeyboard" context:nil];
 		[UIView setAnimationDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue]];
 		[UIView setAnimationCurve:[note.userInfo[UIKeyboardAnimationCurveUserInfoKey] unsignedIntegerValue]];
-		self.view.frame = viewFrame;
-//		NSLog(@"Derp %@ keyboard self.view.frame = %@",  appearing?@"show":@"hide", NSStringFromCGRect(viewFrame));
-		
-//		[UIView commitAnimations];
+		if (constraint) { // Auto Layout
+			constraint.constant = (appearing ? -keyboardFrame.size.height : 0.0);
+			[self.view layoutIfNeeded];
+		} else {
+			CGRect viewFrame = [self derp_viewFrameForKeyboardAppearing:appearing toFrame:keyboardFrame];
+			self.view.frame = viewFrame;
+		}
+
+		[UIView commitAnimations];
 	}];
 }
 
--(void)derp_addKeyboardViewHandlersWithOptions:(NSDictionary*)options{
+-(void)derp_addKeyboardViewHandlersWithOptions:(NSDictionary*)options {
+	[self derp_addKeyboardViewHandlersWithConstraint:nil options:options];
+}
+
+-(void)derp_addKeyboardViewHandlersWithConstraint:(NSLayoutConstraint *)constraint options:(NSDictionary*)options {
 	[self ym_registerOptions:options defaults:@{
 		 DerpKeyboardViewHandlerOptions.minHeight : @0.0,
 	 }];
 	NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
 	id willShow = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
-		[self derp_adaptViewFrameAfterKeyboardNotification:note];
+		[self derp_adaptViewFrameAfterKeyboardNotification:note appearing:YES constraint:constraint];
 	}];
 	
 	id willHide = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
-		[self derp_adaptViewFrameAfterKeyboardNotification:note];
+		[self derp_adaptViewFrameAfterKeyboardNotification:note appearing:NO constraint:constraint];
 	}];
 	
 	objc_setAssociatedObject(self, "derp_willShowKeyboardNotification", willShow, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
